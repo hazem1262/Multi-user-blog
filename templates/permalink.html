@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {{post.render() | safe}}
+
+    <section class='row'>
+        <div class='col-md-12'>
+            <form method="post">
+                <label>
+                    <div>Comment</div>
+                    <textarea rows="5" cols="80" name="comment">{{comment}}</textarea>
+                    <br />
+                    <input class="enter-button btn btn-default btn-xs" type="submit" name="comment_button">
+                </label>
+            </form>
+        </div>
+    </section>
+
+
+{% endblock %}

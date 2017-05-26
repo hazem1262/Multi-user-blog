@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Multi User Blog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Full Stack Web Developer Portfolio">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+
+<body>
+    <div class="container">
+
+        <header>
+            <section class="row">
+                <section class="col-xs-12 col-md-8 text-left">
+                    <h2>Multi User Blog</h2>
+                </section>
+                <section class="welcome col-xs-12 col-md-4 text-right">
+                    {% if username %}
+                        <p >Welcome: {{username}}</p>
+                        <a href="/logout" class="logout glyphicon glyphicon-log-out"> Logout </a>
+                    {% else %}
+                        <a href="/login" class="logout glyphicon glyphicon-log-in"> Login </a>
+                        <br />
+                        <a href="/signup" class="logout glyphicon glyphicon-ok"> Sign up </a>
+                    {% endif %}
+                </section>
+            </section>
+            <br />
+            <section class="row text-center">
+                <section class="col-xs-4">
+                    <a href="/newpost" class="main-title glyphicon glyphicon-plus"> New Post </a>
+                </section>
+                <section class="col-xs-4">
+                    <a href="/welcome" class="main-title glyphicon glyphicon-home"> Main </a>
+                </section>
+                <section class="col-xs-4">
+                    {% if username %}
+                        <a href="/liked/{{username}}" class="header-button glyphicon glyphicon-glass"> My liked posts </a>
+                    {% endif %}
+                </section>
+            </section>
+        </header>
+
+
+        <div>
+            <hr class='base' />
+        </div>
+
+        <div >
+            <p class="warning">
+                {{message}}
+            </p>
+        </div>
+
+        <section id="content">
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <div>
+            <hr class='base' />
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

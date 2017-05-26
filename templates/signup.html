@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Sign up</h1>
+
+<section class='row'>
+    <div class='col-md-12'>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        Username
+                    </td>
+                    <td>
+                        <input type="text" name="username" value="{{username}}" />
+                    </td>
+                    <td class="error">
+                        {{error_username}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        <input type="password" name="password" value="" />
+                    </td>
+                    <td>
+                        {{error_password}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Verify
+                    </td>
+                    <td>
+                        <input type="password" name="verify" value="" />
+                    </td>
+                    <td>
+                        {{error_verify}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        <input type="text" name="email" value="" />
+                    </td>
+                    <td>
+                        {{error_email}}
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <input class="enter-button btn btn-default btn-xs" type="submit">
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

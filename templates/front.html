@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if posts.count() == 0 %}
+    <section class="row">
+        <div class="col-xs-12">
+            <p>
+                Be the first to post!
+            </p>
+        </div>
+    </section>
+
+    {% else %}
+        {% for p in posts %}
+            {{ p.render() | safe }}
+            <hr class='posts'/>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
